@@ -11,59 +11,133 @@
 <body class="font-sans text-gray-700">
 
     <!-- ================= HEADER ================= -->
-    <!-- ================= HEADER ================= -->
-    <header class="absolute top-0 left-0 w-full z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
-
-            <div class="flex items-center justify-evenly md:justify-between
-             mx-auto px-4 sm:px-6 ">
+    <header class="home absolute top-0 left-0 w-full z-50">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 py-5">
+    
+            <div class="flex items-center justify-between mx-auto px-4 sm:px-6">
                 <!-- Logo -->
-                <div class="flex items-center gap-2 text-white font-semibold text-lg">
-                    <span class="text-indigo-500 text-xl">▲</span>
-                    Startup
+                <div class="flex items-center gap-2">
+                    <svg class="w-6 h-6 text-indigo-500" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M3 3l7 4v10l-7-4V3zm11 4l7-4v10l-7 4V7z" />
+                    </svg>
+                    <span class="text-xl font-semibold text-white">Startup</span>
                 </div>
-
+    
                 <!-- Desktop Nav -->
-                <nav class="hidden lg:flex items-center gap-8 text-sm text-white/80">
-                    <a href="#" class="hover:text-white transition">Home</a>
-                    <a href="#" class="hover:text-white transition">Services</a>
-                    <a href="#" class="hover:text-white transition">Portfolio</a>
-                    <a href="#" class="hover:text-white transition">Pages</a>
-                    <a href="#" class="hover:text-white transition">Blog</a>
-                    <a href="#" class="hover:text-white transition">Contact</a>
-                </nav>
+                <nav class="hidden lg:flex items-center gap-8 text-sm text-white/80 relative">
+                    <a href="#home" class="hover:text-white transition">Home</a>
+                    <a href="#services" class="hover:text-white transition">Services</a>
+                    <a href="#portfolio" class="hover:text-white transition">Portfolio</a>
 
+                    <!-- Pages Dropdown -->
+                    <div class="relative group">
+                        <button class="hover:text-white transition flex items-center gap-1">
+                            Pages
+                            <svg class="w-3 h-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                                </path>
+                            </svg>
+                        </button>
+                        <div
+                            class="absolute top-full left-0 mt-2 w-40 bg-white rounded-lg shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-opacity">
+                            <a href="#about" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">About</a>
+                            <a href="#team" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Team</a>
+                            <a href="#careers" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Careers</a>
+                        </div>
+                    </div>
+    
+                    <!-- Blog Dropdown -->
+                    <div class="relative group">
+                        <button class="hover:text-white transition flex items-center gap-1">
+                            Blog
+                            <svg class="w-3 h-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                                </path>
+                            </svg>
+                        </button>
+                        <div
+                            class="absolute top-full left-0 mt-2 w-40 bg-white rounded-lg shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-opacity">
+                            <a href="#latestpost" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Latest Posts</a>
+                            <a href="#tutorials" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Tutorials</a>
+                            <a href="#news" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">News</a>
+                        </div>
+                    </div>
+    
+                    <a href="#contact" class="hover:text-white transition">Contact</a>
+                </nav>
+    
                 <!-- Desktop Button -->
-                <a href="#"
-                    class="hidden lg:inline-block border border-white/30 px-6 py-2 rounded-full text-sm text-white hover:bg-white hover:text-black transition">
+                <a href="#" class="hidden lg:inline-block group text-white text-sm font-medium relative transition">
                     Say Hello
+                    <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-indigo-500 transition-all group-hover:w-full"></span>
                 </a>
 
+    
                 <!-- Mobile Menu Button -->
                 <button id="menuBtn" class="lg:hidden text-white text-2xl">
                     ☰
                 </button>
             </div>
-
-            <!-- ================= MOBILE / TABLET MENU ================= -->
+    
+            <!-- Mobile / Tablet Menu -->
             <div id="mobileMenu" class="lg:hidden mt-6 hidden rounded-xl bg-white shadow-xl p-6 space-y-4 text-center">
+                <a href="#home" class="block text-gray-800 font-medium">Home</a>
+                <a href="#services" class="block text-gray-800 font-medium">Services</a>
+                <a href="#portfolio" class="block text-gray-800 font-medium">Portfolio</a>
 
-                <a href="#" class="block text-gray-800 font-medium">Home</a>
-                <a href="#" class="block text-gray-800 font-medium">Services</a>
-                <a href="#" class="block text-gray-800 font-medium">Portfolio</a>
-                <a href="#" class="block text-gray-800 font-medium">Pages</a>
-                <a href="#" class="block text-gray-800 font-medium">Blog</a>
-                <a href="#" class="block text-gray-800 font-medium">Contact</a>
-
+                <!-- Mobile Pages Dropdown -->
+                <div>
+                    <button
+                        class="w-full text-left flex justify-between items-center text-gray-800 font-medium px-4 py-2 rounded hover:bg-gray-100"
+                        onclick="toggleDropdown('pagesMobile')">
+                        Pages <span>▼</span>
+                    </button>
+                    <div id="pagesMobile" class="hidden flex-col mt-2 space-y-1">
+                        <a href="#about" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">About</a>
+                        <a href="#team" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Team</a>
+                        <a href="#careers" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Careers</a>
+                    </div>
+                </div>
+    
+                <!-- Mobile Blog Dropdown -->
+                <div>
+                    <button
+                        class="w-full text-left flex justify-between items-center text-gray-800 font-medium px-4 py-2 rounded hover:bg-gray-100"
+                        onclick="toggleDropdown('blogMobile')">
+                        Blog <span>▼</span>
+                    </button>
+                    <div id="blogMobile" class="hidden flex-col mt-2 space-y-1">
+                        <a href="#latestpost" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Latest Posts</a>
+                        <a href="#tutorials" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Tutorials</a>
+                        <a href="#news" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">News</a>
+                    </div>
+                </div>
+    
                 <a href="#"
                     class="block mt-4 bg-indigo-500 hover:bg-indigo-600 text-white py-3 rounded-full text-sm transition">
                     Say Hello
                 </a>
             </div>
-
+    
         </div>
     </header>
+    
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
 
+        // Mobile Dropdown Toggle
+        function toggleDropdown(id) {
+            const el = document.getElementById(id);
+            el.classList.toggle('hidden');
+        }
+    </script>
+    
+    
     <!-- Mobile menu toggle -->
     <script>
         const btn = document.getElementById('menuBtn');
@@ -97,7 +171,7 @@
     </section>
 
     <!-- ================= SERVICES ================= -->
-    <section class="max-w-5xl mx-auto px-4 sm:px-6 py-20">
+    <section id="services" class=" max-w-5xl mx-auto px-4 sm:px-6 py-20">
         <div class="text-center max-w-3xl mx-auto">
             <span class="text-sm font-semibold text-indigo-500 uppercase">Services</span>
             <h2 class="mt-4 text-lg sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900">
@@ -147,7 +221,7 @@
     </section>
 
     <!-- ================= ABOUT ================= -->
-    <section class="grid grid-cols-1 lg:grid-cols-2">
+    <section id="about" class="grid grid-cols-1 lg:grid-cols-2">
         <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
             class="w-full sm:h-[350px] lg:h-full object-cover">
 
@@ -169,7 +243,7 @@
        
     </section>
     <!-- ================= PORTFOLIO ================= -->
-    <section class="max-w-4xl mx-auto px-4 py-12">
+    <section id="portfolio" class="max-w-4xl mx-auto px-4 py-12">
         <!-- Heading -->
         <div class="text-center mb-10">
             <h2 class="text-1xl md:text-2xl font-semibold text-gray-900">
@@ -220,7 +294,7 @@
 
     </section>
     <!-- ================= HOW WE WORK ================= -->
-    <section class="py-25 relative overflow-hidden">
+    <section id="featured" class="py-25 relative overflow-hidden">
     <div class="max-w-4xl mx-auto px-10 relative">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             
@@ -262,7 +336,7 @@
 
 
     <!-- ================= TEAM ================= -->
-    <section class="max-w-4xl mx-auto px-4  sm:px-6 py-24">
+    <section id="team" class="max-w-4xl mx-auto px-4  sm:px-6 py-24">
     <!-- <section class="max-w-7xl mx-auto px-4 sm:px-6 py-20"> -->
     <div class="text-center mb-12">
         <h2 class="text-3xl md:text-3xl font-semibold text-gray-900 mb-4">Our Creative Team</h2>
@@ -277,40 +351,50 @@
     </div>
     
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4
-                gap-6 text-center">
+                gap-6 md:gap-3 text-center">
     
         <div>
             <img src="../image/profile1.png" class="mx-auto
-                    w-44 md:w-[90%] lg:w-44
-                    h-52 md:h-[90%] lg:h-52
-                    object-cover">
+            w-full h-auto
+            sm:w-56 sm:h-72
+            md:w-[85%]
+            lg:w-44 lg:h-52
+            object-contain">
             <h3 class="mt-4 md:mt-2 font-semibold">Brandon Yeald</h3>
-            <p class="text-sm text-gray-500 md:mt-1">Founder & CEO</p>
+            <p class="text-sm text-gray-500 md:mask-t-from-0">Founder & CEO</p>
         </div>
     
         <div>
-            <img src="../image/profile2.png" class="mx-auto 
-                            w-44 md:w-[90%] lg:w-44
-                            h-52 md:h-[90%] lg:h-52
-                            object-cover">
+            <img src="../image/profile2.png" class="mx-auto
+            w-full h-auto
+            sm:w-56 sm:h-72
+            md:w-[85%]
+            lg:w-44 lg:h-52
+            object-contain">
             <h3 class="mt-4 md:mt-2 font-semibold">Calvin Anderson</h3>
-            <p class="text-sm text-gray-500 md:mt-1">Designer</p>
+            <p class="text-sm text-gray-500 md:mt-0">Designer</p>
         </div>
     
         <div>
-            <img src="../image/profile3.png" class="mx-auto w-44 md:w-[90%] lg:w-44
-                            h-52 md:h-[90%] lg:h-52
-                            object-cover">
+            <img src="../image/profile3.png" class="mx-auto
+            w-full h-auto
+            sm:w-56 sm:h-72
+            md:w-[85%]
+            lg:w-44 lg:h-52
+            object-contain">
             <h3 class="mt-4 md:mt-2 font-semibold">Roman Solo</h3>
-            <p class="text-sm text-gray-500 md:mt-1">Developer</p>
+            <p class="text-sm text-gray-500 md:mt-0">Developer</p>
         </div>
     
         <div>
-            <img src="../image/profile4.png" class="mx-auto w-44 md:w-[90%] lg:w-44
-                            h-52 md:h-[90%] lg:h-52
-                            object-cover">
+            <img src="../image/profile4.png" class="mx-auto
+            w-full h-auto
+            sm:w-56 sm:h-72
+            md:w-[85%]
+            lg:w-44 lg:h-52
+            object-contain">
             <h3 class="mt-4 md:mt-2 font-semibold">Yeald Kin</h3>
-            <p class="text-sm text-gray-500 md:mt-1">Engineer</p>
+            <p class="text-sm text-gray-500 md:mt-0">Engineer</p>
         </div>
     </div>
 
@@ -318,26 +402,58 @@
     </section>
 
     <!-- ================= TESTIMONIAL ================= -->
-    <section class="relative min-h-[70vh] bg-cover bg-center flex items-center justify-center"
-        style="background-image:url('https://images.unsplash.com/photo-1524758631624-e2822e304c36');">
-        <div class="absolute inset-0 bg-black/60"></div>
-        <div class="relative z-10 max-w-3xl text-center text-white px-4">
-            <div class="text-5xl mb-6">“</div>
-            <p class="text-sm sm:text-base md:text-lg leading-relaxed">
-                Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor sollicitudin.
-            </p>
-            <div class="mt-8 flex items-center justify-center gap-4">
-                <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-12 h-12 rounded-full">
-                <div class="text-left">
-                    <h4 class="font-semibold">Robert Thomson</h4>
-                    <p class="text-sm text-gray-300">Business Owner</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section
+  id="careers"
+  class="relative min-h-[70vh] bg-cover bg-center flex items-center justify-center"
+  style="background-image:url('https://images.unsplash.com/photo-1524758631624-e2822e304c36');"
+>
+  <div class="absolute inset-0 bg-black/60"></div>
+
+  <div
+    class="
+      relative z-10 max-w-3xl text-center text-white px-4
+      py-10 sm:py-14 md:py-16
+    "
+  >
+    <div class="text-5xl mb-6">“</div>
+
+    <p
+      class="
+        text-sm sm:text-base md:text-lg leading-relaxed
+        line-clamp-6
+        md:line-clamp-4
+        xl:line-clamp-4
+        xl:max-w-2xl
+        mx-auto
+      "
+    >
+      Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor
+      sollicitudin. Pellentesque id dolor tempor sapien feugiat ultrices nec sed
+      neque. Fusce ac mattis nulla. Morbi eget ornare dui.
+    </p>
+
+    <div class="mt-8 flex flex-col items-center gap-2">
+      <img
+        src="https://randomuser.me/api/portraits/men/32.jpg"
+        class="
+          rounded-full
+          w-12 h-12
+          md:w-10 md:h-10
+          sm:w-9 sm:h-9
+          object-cover
+          ring-2 ring-white/30
+        "
+      >
+      <h4 class="font-semibold">Robert Thomson</h4>
+      <p class="text-sm text-gray-300">Business Owner</p>
+    </div>
+  </div>
+</section>
+>
+
 
     <!-- ================= GET IN TOUCH ================= -->
-    <section class="max-w-2xl mx-auto px-4 py-20 text-center">
+    <section id="contact" class="max-w-2xl mx-auto px-4 py-20 text-center">
         <h2 class="text-3xl font-semibold text-gray-900">Get in Touch</h2>
         <p class="text-gray-500 mt-3 text-sm">
             Tour function information without cross action media value.
@@ -345,21 +461,88 @@
 
         <form class="mt-10 space-y-5">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input class="border rounded-full px-6 py-3 text-sm" placeholder="Your Name">
-                <input class="border rounded-full px-6 py-3 text-sm" placeholder="Email">
+                <input
+                    class="bg-white border border-gray-200 rounded-full px-6 py-3 text-sm text-gray-800 placeholder-gray-400 shadow-sm focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-200 transition"
+                    placeholder="Your Name">
+        
+                <input
+                    class="bg-white border border-gray-200 rounded-full px-6 py-3 text-sm text-gray-800 placeholder-gray-400 shadow-sm focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-200 transition"
+                    placeholder="Email">
             </div>
-            <input class="border rounded-full px-6 py-3 text-sm w-full" placeholder="Subject">
-            <textarea rows="5" class="border rounded-3xl px-6 py-4 text-sm w-full" placeholder="Message"></textarea>
+        
+            <input
+                class="bg-white border border-gray-200 rounded-full px-6 py-3 text-sm w-full text-gray-800 placeholder-gray-400 shadow-sm focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-200 transition"
+                placeholder="Subject">
+        
+            <textarea rows="5"
+                class="bg-white border border-gray-200 rounded-3xl px-6 py-4 text-sm w-full text-gray-800 placeholder-gray-400 shadow-sm focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-200 transition"
+                placeholder="Message"></textarea>
+        
             <button class="w-full bg-indigo-500 hover:bg-indigo-600 text-white py-3 rounded-full transition">
                 Send Message
             </button>
         </form>
+
+
     </section>
 
     <!-- ================= FOOTER ================= -->
-    <footer class="bg-[#1f1f1f] text-gray-400 text-center py-6 text-sm">
-        © 2026 Startup — Inspired by Colorlib
+    <footer class="bg-[#1f1f1f] text-gray-300">
+        <!-- Main footer content -->
+        <div class="
+          px-6 py-12
+          flex flex-col gap-8
+          md:flex-row md:items-center md:justify-between
+          xl:max-w-7xl xl:mx-auto
+        ">
+            <!-- Left: Logo -->
+            <div class="flex items-center gap-2">
+                <svg class="w-6 h-6 text-indigo-500" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3 3l7 4v10l-7-4V3zm11 4l7-4v10l-7 4V7z" />
+                </svg>
+                <span class="text-xl font-semibold text-white">Startup</span>
+            </div>
+    
+            <!-- Center: Navigation -->
+            <ul class="
+            flex flex-wrap gap-x-6 gap-y-3
+            text-sm text-gray-200
+          ">
+                <li><a href="#" class="hover:text-white transition">About</a></li>
+                <li><a href="#" class="hover:text-white transition">Services</a></li>
+                <li><a href="#" class="hover:text-white transition">Portfolio</a></li>
+                <li><a href="#" class="hover:text-white transition">Pages</a></li>
+                <li><a href="#" class="hover:text-white transition">Blog</a></li>
+                <li><a href="#" class="hover:text-white transition">Contact</a></li>
+            </ul>
+    
+            <!-- Right: Social icons -->
+            <div class="flex items-center gap-3">
+                <a class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-500 hover:border-white hover:text-white transition"
+                    href="#">f</a>
+                <a class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-500 hover:border-white hover:text-white transition"
+                    href="#">t</a>
+                <a class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-500 hover:border-white hover:text-white transition"
+                    href="#">◎</a>
+                <a class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-500 hover:border-white hover:text-white transition"
+                    href="#">G+</a>
+            </div>
+        </div>
+    
+        <!-- Divider -->
+        <div class="border-t border-white/10"></div>
+    
+        <!-- Bottom bar -->
+        <div class="
+          px-6 py-5 text-center text-sm text-gray-400
+          xl:max-w-7xl xl:mx-auto
+        ">
+            Copyright ©2026 All rights reserved |
+            This template is made with <span class="text-white">♡</span> by
+            <a href="#" class="text-indigo-400 hover:underline">Colorlib</a>
+        </div>
     </footer>
+
 
 </body>
 
