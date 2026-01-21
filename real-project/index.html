@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Startup – Responsive Pixel Perfect</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="font-sans text-gray-700 antialiased">
+
+  <!-- ================= HEADER ================= -->
+  <header class="absolute top-0 inset-x-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-6">
+      <div class="flex items-center justify-between">
+
+        <!-- Logo -->
+        <div class="flex items-center gap-2 text-white font-semibold text-lg">
+          <span class="text-indigo-500 text-xl">▲</span>
+          Startup
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center gap-10 text-sm text-white/80">
+          <a class="hover:text-white transition">Home</a>
+          <a class="hover:text-white transition">Services</a>
+          <a class="hover:text-white transition">Portfolio</a>
+          <a class="hover:text-white transition">Pages</a>
+          <a class="hover:text-white transition">Blog</a>
+          <a class="hover:text-white transition">Contact</a>
+        </nav>
+
+        <!-- CTA -->
+        <a class="hidden lg:inline-flex items-center border border-white/30 px-6 py-2 rounded-full text-sm text-white hover:bg-white hover:text-black transition">
+          Say Hello
+        </a>
+
+        <!-- Mobile Button -->
+        <button id="menuBtn" class="lg:hidden text-white text-2xl">
+          ☰
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="lg:hidden hidden mt-6 rounded-2xl bg-white shadow-xl p-6 space-y-4 text-center">
+        <a class="block font-medium">Home</a>
+        <a class="block font-medium">Services</a>
+        <a class="block font-medium">Portfolio</a>
+        <a class="block font-medium">Pages</a>
+        <a class="block font-medium">Blog</a>
+        <a class="block font-medium">Contact</a>
+        <a class="block bg-indigo-500 text-white py-3 rounded-full mt-4">Say Hello</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="relative min-h-[90vh] lg:min-h-screen flex items-center">
+    <div class="absolute inset-0">
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475"
+           class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-black/60"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+      <div class="max-w-xl lg:-ml-20">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
+          Startup you can build a website online using the Bootstrap builder.
+        </h1>
+        <button class="mt-10 bg-indigo-500 hover:bg-indigo-600 px-8 py-3 rounded-full text-sm text-white transition">
+          Visit Our Works
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SERVICES ================= -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-24">
+    <div class="text-center max-w-3xl mx-auto">
+      <span class="text-sm font-semibold text-indigo-500 uppercase">Services</span>
+      <h2 class="mt-6 text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 leading-snug">
+        With more than 20 years of experience<br class="hidden sm:block">
+        we can deliver the best product design.
+      </h2>
+    </div>
+
+    <div class="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+      <!-- Card -->
+      <div class="border rounded-xl p-10 text-center hover:shadow-xl transition">
+        <div class="flex justify-center mb-6">
+          <svg class="w-12 h-12 text-indigo-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6l-8 4 8 4 8-4-8-4zM4 14l8 4 8-4"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900">Graphic Design</h3>
+        <p class="mt-4 text-sm text-gray-500">Lorem ipsum dolor sit amet consectetur.</p>
+      </div>
+
+      <div class="border rounded-xl p-10 text-center hover:shadow-xl transition">
+        <div class="flex justify-center mb-6">
+          <svg class="w-12 h-12 text-indigo-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 12h6m-6 4h6M6 4h12a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2z"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900">Web Design</h3>
+        <p class="mt-4 text-sm text-gray-500">Lorem ipsum dolor sit amet consectetur.</p>
+      </div>
+
+      <div class="border rounded-xl p-10 text-center hover:shadow-xl transition">
+        <div class="flex justify-center mb-6">
+          <svg class="w-12 h-12 text-indigo-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M7 3h10a2 2 0 012 2v14a2 2 0 01-2 2H7a2 2 0 01-2-2V5a2 2 0 012-2z"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900">Mobile App</h3>
+        <p class="mt-4 text-sm text-gray-500">Lorem ipsum dolor sit amet consectetur.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="grid grid-cols-1 lg:grid-cols-2">
+    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
+         class="w-full h-[320px] sm:h-[400px] lg:h-full object-cover">
+
+    <div class="bg-[#1f1f1f] text-white flex items-center px-6 sm:px-10 lg:px-16 py-20">
+      <div class="max-w-xl">
+        <span class="text-sm uppercase text-gray-400">About Us</span>
+        <h2 class="text-3xl sm:text-4xl font-semibold mt-6">Empowering individuals</h2>
+        <p class="text-gray-400 mt-6 leading-relaxed">
+          Efficiently unleash cross-media tour function information without
+          cross action media value. Quickly maximize timely deliverables.
+        </p>
+        <p class="text-gray-500 mt-5 italic">
+          “Function information without cross action media value.”
+        </p>
+        <button class="mt-10 bg-indigo-500 px-6 py-3 rounded-full text-sm hover:bg-indigo-600 transition">
+          About Us
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TEAM ================= -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-24">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-semibold text-gray-900">Our Creative Team</h2>
+      <p class="text-gray-500 mt-4 text-sm max-w-xl mx-auto">
+        Tour function information without cross action media value.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-14 text-center">
+      <div>
+        <img src="https://randomuser.me/api/portraits/men/11.jpg" class="mx-auto w-44 rounded-md">
+        <h3 class="mt-5 font-semibold">Brandon Yeald</h3>
+        <p class="text-sm text-gray-500">Founder & CEO</p>
+      </div>
+      <div>
+        <img src="https://randomuser.me/api/portraits/men/12.jpg" class="mx-auto w-44 rounded-md">
+        <h3 class="mt-5 font-semibold">Calvin Anderson</h3>
+        <p class="text-sm text-gray-500">Designer</p>
+      </div>
+      <div>
+        <img src="https://randomuser.me/api/portraits/men/13.jpg" class="mx-auto w-44 rounded-md">
+        <h3 class="mt-5 font-semibold">Roman Solo</h3>
+        <p class="text-sm text-gray-500">Developer</p>
+      </div>
+      <div>
+        <img src="https://randomuser.me/api/portraits/men/14.jpg" class="mx-auto w-44 rounded-md">
+        <h3 class="mt-5 font-semibold">Yeald Kin</h3>
+        <p class="text-sm text-gray-500">Engineer</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-[#1f1f1f] text-gray-400 text-center py-6 text-sm">
+    © 2026 Startup — Inspired by Colorlib
+  </footer>
+
+  <!-- ================= JS ================= -->
+  <script>
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>
